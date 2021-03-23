@@ -18,36 +18,17 @@ animal-based hash digests for humans.. in rust
 
 ## Overview
 
-The Helium API is a REST API service as defined by the
-[blockhain-http](https://github.com/helium/blockchain-http) service. This
-library attempts to wrap this API in an async, easy to use library that supports
-the conventions as exposed by the API. This includes:
-
-* Modular access to each of the main areas of the Helium API
-* Support for lazily fetched paged responses
-
-Contributions and helpful suggestions are [always
-welcome](https://github.com/helium/helium-api-rs/issues)
+Angry Purple Tiger generates animal-based hash diegests meant to be memorable
+and human-readable. Angry Purple Tiger is apt for anthropomorphizing project
+names, crypto addresses, UUIDs, or any complex string of characters that needs
+to be displayed in a user interface.
 
 ## Example
 
-Create a client to the default `api.helium.io` endpoint and ask for a given
-account.
-
 ```rust,no-run
-use helium_api::*;
+use angry_purple_tiger::AnimalName;
 
-#[tokio::main]
-async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let client = Client::default();
-    let account = accounts::get(
-        &client,
-        "13buBykFQf5VaQtv7mWj2PBY9Lq4i1DeXhg7C4Vbu3ppzqqNkTH",
-    )
-    .await?;
-    println!("Account: {:?}", account);
-    Ok(())
-}
+let address = "112CuoXo7WCcp6GGwDNBo6H5nKXGH45UNJ39iEefdv2mwmnwdFt8";
+let animal_name = known.parse::<AnimalName>().expect("animal name");
+assert_eq!(animal_name, "feisty-glass-dalmatian")
 ```
-
-See the examples folder and unit tests for more examples.

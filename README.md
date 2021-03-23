@@ -11,8 +11,8 @@ animal-based hash digests for humans.. in rust
 [crates-url]: https://crates.io/crates/angry-purple-tiger
 [docs-badge]: https://docs.rs/angry-purple-tiger/badge.svg
 [docs-url]: https://docs.rs/angry-purple-tiger/latest/angry-purple-tiger/
-[actions-badge]: https://github.com/helium/angry-purple-tiger-rs/workflows/CI/badge.svg
-[actions-url]: https://github.com/helium/angry-purple-tiger-rs/actions?query=workflow%3ACI+branch%3Amain
+[actions-badge]: https://github.com/helium/angry-purple-tiger-rs/actions/workflows/rust.yml/badge.svg
+[actions-url]: https://github.com/helium/angry-purple-tiger-rs/actions/workflows/rust.yml
 [discord-badge]: https://img.shields.io/discord/500028886025895936.svg?logo=discord&style=flat-square
 [discord-url]: https://discord.gg/helium
 

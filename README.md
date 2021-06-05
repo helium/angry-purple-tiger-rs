@@ -32,3 +32,11 @@ let address = "112CuoXo7WCcp6GGwDNBo6H5nKXGH45UNJ39iEefdv2mwmnwdFt8";
 let animal_name = known.parse::<AnimalName>().expect("animal name");
 assert_eq!(animal_name, "feisty-glass-dalmatian")
 ```
+
+## Using CLI
+
+```
+$ cargo build --release
+$ target/release/angry_purple_tiger 112CuoXo7WCcp6GGwDNBo6H5nKXGH45UNJ39iEefdv2mwmnwdFt8
+feisty-glass-dalmatian
+```

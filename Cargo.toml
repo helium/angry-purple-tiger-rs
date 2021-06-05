@@ -15,6 +15,6 @@ path = "src/bin.rs"
 
 [dependencies]
 md5 = "0"
-clap = "2.33.3"
+clap = "2"
 
 [dev-dependencies]

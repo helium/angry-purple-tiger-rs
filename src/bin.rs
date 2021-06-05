@@ -1,5 +1,4 @@
-#[macro_use]
-extern crate clap;
+use clap::clap_app;
 
 fn main() {
     let matches = clap_app!(myapp =>

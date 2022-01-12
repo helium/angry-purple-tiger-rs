@@ -22,7 +22,6 @@ pub(crate) const ADJECTIVES: &[&str] = &[
     "scruffy",
     "innocent",
     "short",
-    "skinny",
     "acrobatic",
     "tall",
     "proper",

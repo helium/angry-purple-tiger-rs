@@ -665,7 +665,6 @@ pub(crate) const ANIMALS: &[&str] = &[
     "pony",
     "porcupine",
     "puma",
-    "raccoon",
     "reindeer",
     "rhino",
     "skunk",

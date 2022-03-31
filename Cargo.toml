@@ -8,6 +8,8 @@ description = "animal-based hash digests for humans"
 authors = ["Marc Nijdam <marc@helium.com>"]
 edition = "2021"
 
+[features]
+helium_crypto = ["helium-crypto"]
 
 [[bin]]
 name = "angry_purple_tiger"
@@ -17,5 +19,6 @@ path = "src/bin.rs"
 md5 = "0"
 clap = {version = "4", features = ["derive"]}
 anyhow = "1"
+helium-crypto = {version = ">=0.6", optional = true}
 
 [dev-dependencies]

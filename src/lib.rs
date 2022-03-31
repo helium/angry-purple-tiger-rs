@@ -31,15 +31,25 @@ impl PartialEq<&str> for AnimalName {
     }
 }
 
+fn str_to_animal_name(s: &str) -> AnimalName {
+    let digest = hex_digest(s);
+    AnimalName {
+        adjective: words::ADJECTIVES[digest[0]],
+        color: words::COLORS[digest[1]],
+        animal: words::ANIMALS[digest[2]],
+    }
+}
+
 impl FromStr for AnimalName {
     type Err = std::convert::Infallible;
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        let digest = hex_digest(s);
-        Ok(Self {
-            adjective: words::ADJECTIVES[digest[0]],
-            color: words::COLORS[digest[1]],
-            animal: words::ANIMALS[digest[2]],
-        })
+        Ok(str_to_animal_name(s))
+    }
+}
+#[cfg(feature = "helium_crypto")]
+impl From<helium_crypto::PublicKey> for AnimalName {
+    fn from(pubkey: helium_crypto::PublicKey) -> Self {
+        str_to_animal_name(&pubkey.to_string())
     }
 }
 
@@ -59,12 +69,26 @@ fn compress(size: usize, bytes: &[u8], dest: &mut [usize]) {
     }
 }
 
+#[cfg(test)]
 mod test {
+    use super::AnimalName;
+
     #[test]
     fn basic() {
-        use super::AnimalName;
         let known = "112CuoXo7WCcp6GGwDNBo6H5nKXGH45UNJ39iEefdv2mwmnwdFt8";
         let animal_name = known.parse::<AnimalName>().expect("animal name");
+        assert_eq!(animal_name, "feisty-glass-dalmatian")
+    }
+
+    #[test]
+    #[cfg(feature = "helium-crypto")]
+    fn from_public_key() {
+        use std::str::FromStr;
+        let known = helium_crypto::PublicKey::from_str(
+            "112CuoXo7WCcp6GGwDNBo6H5nKXGH45UNJ39iEefdv2mwmnwdFt8",
+        )
+        .expect("public key");
+        let animal_name: AnimalName = known.into();
         assert_eq!(animal_name, "feisty-glass-dalmatian")
     }
 }

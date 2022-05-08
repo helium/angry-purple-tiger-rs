@@ -29,7 +29,7 @@ to be displayed in a user interface.
 use angry_purple_tiger::AnimalName;
 
 let address = "112CuoXo7WCcp6GGwDNBo6H5nKXGH45UNJ39iEefdv2mwmnwdFt8";
-let animal_name = known.parse::<AnimalName>().expect("animal name");
+let animal_name = address.parse::<AnimalName>().expect("animal name");
 assert_eq!(animal_name, "feisty-glass-dalmatian")
 ```
 

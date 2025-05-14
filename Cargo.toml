@@ -19,6 +19,6 @@ path = "src/bin.rs"
 md5 = "0"
 clap = {version = "4", features = ["derive"]}
 anyhow = "1"
-helium-crypto = {version = ">=0.6", optional = true}
+helium-crypto = { git = "https://github.com/helium/helium-crypto-rs", branch = "jg/sqlx-update", optional = true }
 
 [dev-dependencies]
